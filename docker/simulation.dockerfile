@@ -117,8 +117,9 @@ RUN rm -rf /var/lib/apt/lists/* && apt-get clean
 ENV GLOG_minloglevel=2
 ENV MAGNUM_LOG="quiet"
 # TODO：如果走了代理、但是想镜像本地化到其它机器，记得清空代理（或者容器内unset）
-# ENV http_proxy=
-# ENV https_proxy=
-# ENV no_proxy=
+ENV http_proxy=
+ENV https_proxy=
+ENV no_proxy=
+
 CMD ["/bin/bash"]
 WORKDIR /workspace
